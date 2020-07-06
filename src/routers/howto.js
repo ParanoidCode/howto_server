@@ -122,10 +122,10 @@ router.get('/api/user/:username', (req, res)=>{
             Howto.find(query).then((results) => {
                 res.send(results)
             }).catch((e) => {
-                res.status(400).send("Error: content empty")
+                res.status(400).send({errmsg:"content empty"})
             })
         }).catch((e) => {
-            res.status(400).send("Error: user not found")
+            res.status(400).send({errmsg:"user not found"})
         })
 
 })
